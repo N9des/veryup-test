@@ -37,6 +37,12 @@
   height: 90%;
   z-index: -1;
 
+  .arriere-plan {
+    .train-bg {
+      animation: translateX 15s infinite;
+    }
+  }
+
   @include xx-large {
     height: 80%;
     left: -10%;
@@ -44,9 +50,9 @@
   }
 }
 
-@keyframes rotate {
+@keyframes translateX {
   to {
-    transform: rotate(360deg);
+    transform: translateX(-350px);
   }
 }
 
@@ -54,7 +60,6 @@
 // Placer en position absolute et taille de l'image gérer indépendamment
 .img {
   position: absolute;
-  // z-index: -1;
   &__train {
     width: 70%;
     top: 62%;
