@@ -1,0 +1,38 @@
+// typo import or font-face
+@import url("https://use.typekit.net/imq4sqq.css");
+
+$texte: neuzeit-grotesk, sans-serif;
+$titre: neuzeit-grotesk, sans-serif;
+
+body {
+  color: $darkblue-color;
+  font-family: $texte;
+  font-size: 20px;
+}
+
+.title {
+  font-family: $titre;
+  line-height: 1;
+  color: $black-color;
+  font-size: 2.2rem;
+  text-align: center;
+  position: absolute;
+  top: 2%;
+  left: 20%;
+}
+
+.texte {
+  line-height: 1.5;
+  max-width: 55ch;
+  font-weight: 500;
+  position: absolute;
+
+  &--1 {
+    top: 15%;
+    left: 15%;
+  }
+}
+
+.bold {
+  font-weight: 700;
+}

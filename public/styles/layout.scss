@@ -1,0 +1,168 @@
+// Mettre le wrapper en taille d'écran.
+// Rotation afin de rendre le scroll vertical en scroll horizontale
+// masquer la scroll bar avec scrollbar-width et overflow-style
+.wrapper {
+  width: 100vh;
+  height: 100vw;
+  transform: rotate(-90deg) translateX(-100vh);
+  transform-origin: top left;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  position: absolute;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+//Remplir le wrapper parent à 100% avec le container
+// Rotation de la section pour rendre le section visible dans le viewport
+.container {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  transform: rotate(90deg) translateY(-100vh);
+  transform-origin: top left;
+
+}
+
+// Mettre le SVG en absolute avec de la placer en bas à gauche du container et  de rogner la partie gauche de l'image et le bas (bord blanc)
+// z-index -1 pour le placer en arrière-plan
+.bg-city{
+  position: absolute;
+  bottom: -5%;
+  left: -20%;
+  height: 90%;
+  z-index: -1;
+
+  @include xx-large {
+    height: 80%;
+    left: -10%;
+    bottom: -2%;
+  }
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+// Images des différents éléments comme les véhicules
+// Placer en position absolute et taille de l'image gérer indépendamment
+.img {
+  position: absolute;
+  // z-index: -1;
+  &__train {
+    width: 70%;
+    top: 62%;
+    left: -30%;
+
+    @include xx-large {
+      width: 60%;
+    }
+  }
+
+  &__bus {
+    width: 30%;
+    top: 65%;
+    left: -5%;
+
+    @include xx-large {
+      width: 23%;
+    }
+  }
+
+  &__carcara {
+    // position: sticky;
+    width: 20%;
+    top: 73%;
+    left: 2%;
+    // top: 0;
+    // left: 0;
+
+    @include xx-large {
+      width: 15%;
+    }
+  }
+
+  &__car {
+    width: 25%;
+    top: 78%;
+    left: -6%;
+
+    @include xx-large {
+      width: 20%;
+      top: 76%;
+    }
+  }
+}
+
+// placer le texte wrapper
+.texte__wrapper {
+  position: absolute;
+  width: 100vw;
+  height: 100%;
+
+  &--2 {
+    top: 5%;
+    left: 120%;
+
+    @include xx-large {
+      left: 80%;
+    }
+  }
+}
+
+//liste d'aespects avec hotspot
+.aspects {
+  &__list {
+    list-style: none;
+    padding: 0;
+  }
+
+  &__el {
+    &:not(:last-child){
+      margin-bottom: .2em;
+    }
+  }
+
+  &__btn {
+    background: transparent;
+    outline: 0;
+    border: none;
+    font-weight: 700;
+    padding: 0;
+    color: $darkblue-color;
+    transition: color .3s ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+      color: $lightblue-color;
+    }
+  }
+}
+
+//Hotspot
+.hotspot {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: $lightblue-color;
+  border-radius: 20px;
+  padding: 1em;
+  font-size: 16px;
+  display: none;
+  width: 100%;
+  left: 100%;
+
+  &__close {
+    position: absolute;
+    left: 93%;
+    cursor: pointer;
+  }
+}
+
